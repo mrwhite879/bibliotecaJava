@@ -1,11 +1,11 @@
 package Clases;
 
 public class User {
-    public int id;
-    public String name;
-    public String email;
-    public int telefono;
-    public String password;
+    private int id;
+    private String name;
+    private String email;
+    private int telefono;
+    private String password;
 
 
     public User () {};
@@ -47,6 +47,11 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (password.equals("pepito")) {
+            this.password = password;
+            System.out.println("Ha iniciado sesion");
+        } else {
+            System.out.println("Contraseña Incorrecta");
+        }
     }
 }

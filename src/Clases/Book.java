@@ -1,13 +1,21 @@
 package Clases;
 
 public class Book {
-    public int id;
-    public String nombre;
-    public String categoria;
-    public String autor;
-    public int cant_ejemplares;
+    private int id;
+    private String nombre;
+    private String categoria;
+    private String autor;
+    private int cant_ejemplares;
 
-    public Book () {};
+    public Book() { };
+
+    public Book(int id, String nombre, String categoria, String autor, int cant_ejemplares) {
+        this.id = id;
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.autor = autor;
+        this.cant_ejemplares = cant_ejemplares;
+    }
 
     public int getId() {
         return id;

@@ -6,35 +6,43 @@ public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         User usuario = new User();
-        Book libro = new Book();
 
-        System.out.println("1-Crear usuario");
+        var libro1 = new Book(1 , "don quijote" , "novela", "Miguel de Cervantes", 13);
+        var libro2 = new Book(2, "12 Nuevas reglas para vivir", "Autoayuda", "Jordan B. Peterson", 24);
+
+
+
+        Book[] Libreria = {libro1,libro2};
+
+        System.out.println("1-Inicio de sesion");
         System.out.println("2-Buscar libro");
 
         int opcion = teclado.nextInt();
         teclado.nextLine();
         switch (opcion) {
             case 1 -> {
-                System.out.println("Ingrese nombre de usuario");
-                String lect = teclado.nextLine();
+                System.out.println("Inicio de Sesion");
+                System.out.println("Ingrese su nombre de usuario");
+                String nombreUsuario = teclado.nextLine();
 
-                usuario.name = lect;
+                usuario.setName(nombreUsuario);
+
+                System.out.println("Ingrese contraseña");
+                String passwordUsuario = teclado.nextLine();
+
+                usuario.setPassword(passwordUsuario);
             }
             case 2 -> {
-                System.out.println("Ingrese nombre del libro");
-                String nombreLibro = teclado.nextLine();
-
-                libro.nombre = nombreLibro;
+                System.out.println("Ingrese el nombre del libro");
 
             }
 
         }
-        System.out.println("el nombre del objeto usuario es:" + usuario.name);
+        System.out.println("el nombre del objeto usuario es:" + usuario.getName());
+
         teclado.close();
         }
 
     }
 
-    // 1- pedirle al usuario los datos que quiero que ingrese
-    // 2- leer los datos
-    // 3- guardarlo en la clase
+

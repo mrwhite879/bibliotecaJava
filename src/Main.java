@@ -1,5 +1,7 @@
 import Clases.User;
 import Clases.Book;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -34,6 +36,21 @@ public class Main {
             }
             case 2 -> {
                 System.out.println("Ingrese el nombre del libro");
+                String nombreLibro = teclado.nextLine();
+                boolean encontrado = false;
+
+                for (Book buscar : Libreria) {
+                    if(buscar.getNombre().equals(nombreLibro)) {
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (encontrado){
+                    System.out.println("Su libro se encuentra en la libreria");
+                } else {
+                    System.out.println("El libro que esta buscando no se encuentra");
+                }
 
             }
 
@@ -44,5 +61,6 @@ public class Main {
         }
 
     }
+
 
 

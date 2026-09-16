@@ -6,8 +6,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
 
+        Scanner teclado = new Scanner(System.in);
+        int opcion = 0;
 
         var libro1 = new Book(1 , "don quijote" , "novela", "Miguel de Cervantes", 13);
         var libro2 = new Book(2, "12 Nuevas reglas para vivir", "Autoayuda", "Jordan B. Peterson", 24);
@@ -17,9 +18,20 @@ public class Main {
         Book[] Libreria = {libro1,libro2};
 
 
-        System.out.println("1-Buscar libro");
+        while (true) {
+            System.out.println("Elija una opcion");
+            System.out.println("1-Buscar libro");
 
-        int opcion = teclado.nextInt();
+            if (teclado.hasNextInt()) {
+                opcion = teclado.nextInt();
+                if (opcion >= 1 && opcion <=5){
+                    break;
+                }
+
+            } else {
+                teclado.next();
+            }
+        }
         teclado.nextLine();
         switch (opcion) {
 

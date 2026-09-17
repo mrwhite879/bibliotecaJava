@@ -15,7 +15,7 @@ public class Main {
 
 
 
-        Book[] Libreria = {libro1,libro2};
+        Book[] Libreria = {libro1, libro2};
 
 
         while (true) {
@@ -37,20 +37,18 @@ public class Main {
 
             case 1 -> {
                 System.out.println("Ingrese el nombre del libro");
-                String nombreLibro = teclado.nextLine();
-                boolean encontrado = false;
+                String busqueda = teclado.nextLine();
 
-                for (Book buscar : Libreria) {
-                    if(buscar.getNombre().equals(nombreLibro)) {
-                        encontrado = true;
-                        break;
+                for (Book book : Libreria) {
+                    String libroActual = book.getNombre();
+                    String textoBusqueda = busqueda;
+                    boolean encontrado = libroActual.toLowerCase().contains(textoBusqueda.toLowerCase());
+                    if (encontrado) {
+                        System.out.println("Libro encontrado "+ book.getNombre() + " de " + book.getAutor());
                     }
                 }
-                if (encontrado){
-                    System.out.println("Su libro se encuentra en la libreria");
-                } else {
-                    System.out.println("El libro que esta buscando no se encuentra");
-                }
+
+
 
             }
 
@@ -60,6 +58,6 @@ public class Main {
         }
 
     }
-
-
-
+//pseudocodigo:
+// comparar si alguna de las palabras o palabra que ingreso el usuario coincide con lo que hay guardado en el array
+//

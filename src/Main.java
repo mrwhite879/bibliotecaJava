@@ -31,28 +31,31 @@ public class Main {
             } else {
                 teclado.next();
             }
-        }
-        teclado.nextLine();
-        switch (opcion) {
 
-            case 1 -> {
-                System.out.println("Ingrese el nombre del libro");
-                String busqueda = teclado.nextLine();
+            switch (opcion) {
 
-                for (Book book : Libreria) {
-                    String libroActual = book.getNombre();
-                    String textoBusqueda = busqueda;
-                    boolean encontrado = libroActual.toLowerCase().contains(textoBusqueda.toLowerCase());
-                    if (encontrado) {
-                        System.out.println("Libro encontrado "+ book.getNombre() + " de " + book.getAutor());
+                case 1 -> {
+                    System.out.println("Ingrese el nombre del libro");
+                    String busqueda = teclado.nextLine();
+
+                    for (Book book : Libreria) {
+                        String libroActual = book.getNombre();
+                        String textoBusqueda = busqueda;
+                        boolean encontrado = libroActual.toLowerCase().contains(textoBusqueda.toLowerCase());
+                        if (encontrado) {
+                            System.out.println("Libro encontrado "+ book.getNombre() + " de " + book.getAutor());
+                        }
                     }
+
+
+
                 }
-
-
 
             }
 
         }
+
+
 
         teclado.close();
         }

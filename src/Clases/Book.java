@@ -56,4 +56,8 @@ public class Book {
     public void setCant_ejemplares(int cant_ejemplares) {
         this.cant_ejemplares = cant_ejemplares;
     }
+
+    public String getInfo() {
+        return "Libro: "+ nombre + " autor: "+ autor;
+    }
 }

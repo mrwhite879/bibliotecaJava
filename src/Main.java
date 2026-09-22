@@ -1,12 +1,13 @@
 import Clases.User;
 import Clases.Book;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        
         Scanner teclado = new Scanner(System.in);
         int opcion = 0;
 
@@ -21,7 +22,7 @@ public class Main {
         while (true) {
             System.out.println("Elija una opcion");
             System.out.println("1-Buscar libro");
-            System.out.println("2-Salir");
+            System.out.println("2-Listar los libros");
             if (teclado.hasNextInt()) {
                 opcion = teclado.nextInt();
 
@@ -57,7 +58,9 @@ public class Main {
                 }
 
                 case 2 -> {
-                    System.out.println("Saliendo del programa...");
+                    for (Book book : Libreria) {
+                        System.out.println(book.getInfo());
+                    }
                 }
             }
             break;

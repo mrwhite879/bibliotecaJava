@@ -60,4 +60,6 @@ public class Book {
     public String getInfo() {
         return "Libro: "+ nombre + " autor: "+ autor;
     }
+
+
 }

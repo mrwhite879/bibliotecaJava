@@ -1,6 +1,7 @@
 import Clases.User;
 import Clases.Book;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -11,18 +12,15 @@ public class Main {
         Scanner teclado = new Scanner(System.in);
         int opcion = 0;
 
-        var libro1 = new Book(1 , "don quijote" , "novela", "Miguel de Cervantes", 13);
-        var libro2 = new Book(2, "12 Nuevas reglas para vivir", "Autoayuda", "Jordan B. Peterson", 24);
+        List<Book> lista = new ArrayList<Book>();
 
-
-
-        Book[] Libreria = {libro1, libro2};
 
 
         while (true) {
             System.out.println("Elija una opcion");
             System.out.println("1-Buscar libro");
             System.out.println("2-Listar los libros");
+            System.out.println("3-Agregar libro");
             if (teclado.hasNextInt()) {
                 opcion = teclado.nextInt();
 
@@ -45,7 +43,7 @@ public class Main {
                     System.out.println("Ingrese el nombre del libro");
                     String busqueda = teclado.nextLine();
                     System.out.println(busqueda);
-                    for (Book book : Libreria) {
+                    for (Book book : lista) {
                         String libroActual = book.getNombre();
                         String textoBusqueda = busqueda;
                         boolean encontrado = libroActual.toLowerCase().contains(textoBusqueda.toLowerCase());
@@ -58,8 +56,28 @@ public class Main {
                 }
 
                 case 2 -> {
-                    for (Book book : Libreria) {
+                    for (Book book : lista) {
                         System.out.println(book.getInfo());
+                    }
+                }
+
+                case 3 -> {
+                    System.out.println("Ingrese el nombre del libro");
+                    String nombre = teclado.nextLine();
+
+                    System.out.println("Ingrese la categoria del libro");
+                    String categoria = teclado.nextLine();
+
+                    System.out.println("Ingrese el nombre del autor");
+                    String autor = teclado.nextLine();
+
+                    System.out.println("Ingrese la cantidad de ejemplares");
+                    int cant = teclado.nextInt();
+
+                    lista.add(new Book(1,nombre,categoria,autor,cant));
+
+                    for (int i=0; i<lista.size(); i++) {
+                        System.out.println("prueba:" + lista.get(i).getNombre());
                     }
                 }
             }
@@ -73,6 +91,3 @@ public class Main {
         }
 
     }
-//pseudocodigo:
-// comparar si alguna de las palabras o palabra que ingreso el usuario coincide con lo que hay guardado en el array
-//

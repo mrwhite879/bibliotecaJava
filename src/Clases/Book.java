@@ -1,4 +1,6 @@
 package Clases;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Book {
     private int id;
@@ -61,5 +63,51 @@ public class Book {
         return "Libro: "+ nombre + " autor: "+ autor;
     }
 
+    public void cargarLibro (ArrayList<Book> libros){
 
+        Scanner teclado = new Scanner(System.in);
+        String nombre;
+        String categoria;
+        String autor;
+        int id;
+        int cant_ejem;
+
+        int opcion;
+
+
+        for (int i= 1; i<5; i++) {
+
+            do {
+                System.out.println("id?");
+                id= teclado.nextInt();
+                teclado.nextLine();
+                System.out.println("Ingrese el nombre del libro");
+                nombre = teclado.nextLine();
+
+                System.out.println("Categoria");
+                categoria = teclado.nextLine();
+
+                System.out.println("Ingrese el nombre del autor");
+                autor = teclado.nextLine();
+
+
+                System.out.println("Ingrese la cantidad de ejemplares");
+                cant_ejem = teclado.nextInt();
+
+
+
+                libros.add(new Book(id,nombre,categoria, autor, cant_ejem));
+
+
+                System.out.println("Presione 1 para seguir ingresando empleados");
+                System.out.println("Presione 2 para salir");
+                opcion = teclado.nextInt();
+
+            } while (opcion == 1);
+
+
+        }
+
+
+    }
 }

@@ -63,7 +63,7 @@ public class Book {
         return "Libro: "+ nombre + " autor: "+ autor;
     }
 
-    public void cargarLibro (ArrayList<Book> libros){
+    public static void cargarLibro (ArrayList<Book> libros){
 
         Scanner teclado = new Scanner(System.in);
         String nombre;
@@ -75,9 +75,8 @@ public class Book {
         int opcion;
 
 
-        for (int i= 1; i<5; i++) {
-
             do {
+
                 System.out.println("id?");
                 id= teclado.nextInt();
                 teclado.nextLine();
@@ -103,11 +102,19 @@ public class Book {
                 System.out.println("Presione 2 para salir");
                 opcion = teclado.nextInt();
 
+
             } while (opcion == 1);
 
 
         }
 
+    public static void mostrarLibros(ArrayList<Book> libros) {
 
+        for (Book libro : libros) {
+            System.out.println("- " + );
+        }
     }
+
+
 }
+

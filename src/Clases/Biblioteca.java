@@ -38,4 +38,15 @@ public class Biblioteca {
         }
         return resultado;
     }
+
+    public void agregarCategoria (int id, String nombre, String descripcion) {
+        Categoria newCategoria = new Categoria(id, nombre, descripcion);
+        this.categorias.add(newCategoria);
+        System.out.println("categoria cargada");
+    }
+
+    public void agregarUsuario (List<User> user) {
+        User usuario1 = new User(1,"leandro","leand@mail","messi");
+        usuarios.add(usuario1);
+    }
 }

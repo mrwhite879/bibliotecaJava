@@ -7,7 +7,7 @@ public class Book {
     private int anioPublicacion;
     private String isbn;
     private Categoria categoria;
-    private String estado;
+    private Boolean estado;
     public User usuarioPrestado;
 
 
@@ -70,11 +70,11 @@ public class Book {
         this.categoria = categoria;
     }
 
-    public String getEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 

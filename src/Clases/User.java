@@ -55,6 +55,7 @@ public class User {
     }
 
     public void setLibrosPrestados(List<Book> librosPrestados) {
+
         this.librosPrestados = librosPrestados;
     }
 

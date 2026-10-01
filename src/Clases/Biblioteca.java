@@ -45,17 +45,15 @@ public class Biblioteca {
         System.out.println("categoria cargada");
     }
 
-    public void agregarUsuario (int id, String nombre, String email, String password) {
+    public User agregarUsuario (int id, String nombre, String email, String password) {
         User newUsuario = new User (id, nombre, email, password);
-        this.usuarios.add(newUsuario);
+        usuarios.add(newUsuario);
         System.out.println("Usuario cargado");
+        return newUsuario;
     }
 
-    public void agregarLibro (int id, String titulo, String autor, int anioPublicacion, String isbn, String estado) {
-        Book newLibro = new Book(id, titulo, autor, anioPublicacion, isbn, estado);
-        this.libros.add(newLibro);
-        System.out.println("libro cargado");
-    }
+
+
 
     /*
     lo que va a hacer esto es prestarle el libro al usuario

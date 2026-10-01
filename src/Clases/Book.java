@@ -11,7 +11,7 @@ public class Book {
     public User usuarioPrestado;
 
 
-    public Book(Categoria categoria, int id, String titulo, String autor, int anioPublicacion, String isbn, String estado) {
+    public Book(Categoria categoria, int id, String titulo, String autor, int anioPublicacion, String isbn, Boolean estado) {
         this.categoria = categoria;
         this.id = id;
         this.titulo = titulo;

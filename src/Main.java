@@ -12,11 +12,11 @@ public class Main {
     public static void main(String[] args) {
 
         Biblioteca prueba = new Biblioteca();
-        prueba.agregarCategoria(1,"lean","hola");
-        prueba.agregarUsuario(1,"leandro","hola","messi");
-        prueba.agregarLibro(1,"don quijote", "cervantes", 1873, "2514", "disponible");
 
-        prueba.prestarLibro("don quijote", newUsuario );
+        User referenciaNewUsuario = prueba.agregarUsuario(1,"leandro","hola","messi");
+
+        prueba.prestarLibro("don quijote", referenciaNewUsuario);
+
 
 
     }
